@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite + Vue</title>
+</head>
+<body>
+<div id="topBanner">
+
+    <div id="logo">
+        <span class="lText" id="lText1">JU</span><span class="lText" id="lText2">BOOK</span>
+    </div>
+
+    <div id="insideSynBox">
+
+        <div id="file-name">
+            <input id="fileName" type="text"/>
+        </div>
+
+        <div id="menu-bar">
+            <div class="options" v-for="(item, index) in firstLevelMenu" v-bind:id="item">{{ index }}</div>
+            <div class="optionAll" v-for="(Firstitem, Findex) in secondLevelMenu" v-bind:id="'opa'+(Findex+1)">
+                <div class="option" v-for="(item, Sindex) in Firstitem" :id = "'op'+secondIndex[Findex][Sindex]">
+                    {{ item instanceof Array ? null : item }}
+                </div>
+            </div>
+            <!--                <div class="option" id="op1">新建</div>-->
+            <!--                <div class="option" id="op2">保存</div>-->
+            <!--                <div class="option" id="op3">打印</div>-->
+            <!--            </div>-->
+            <!--            <div class="optionAll" id="opa2">-->
+            <!--                <div class="option" id="op4">新增单元格</div>-->
+            <!--                <div class="option" id="op5">上移单元格</div>-->
+            <!--                <div class="option" id="op6">下移单元格</div>-->
+            <!--            </div>-->
+            <!--            <div class="optionAll" id="opa3">-->
+            <!--                <div class="option" id="op7">字体大小-->
+            <!--                    <div class="tertOptions" id="top1">-->
+            <!--                        &lt;!&ndash;三级菜单&ndash;&gt;-->
+            <!--                        <div class="option" id="op10">-->
+            <!--                            9px-->
+            <!--                        </div>-->
+            <!--                        <div class="option" id="op11">-->
+            <!--                            14px-->
+            <!--                        </div>-->
+            <!--                        <div class="option" id="op12">-->
+            <!--                            18px-->
+            <!--                        </div>-->
+            <!--                        <div class="option" id="op13">-->
+            <!--                            22px-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                &lt;!&ndash;          html中插入的例如onclick的dom事件监听引用回调函数必须在该元素前的script标签内定义&ndash;&gt;-->
+            <!--                <div class="option" id="op8">主题选择-->
+            <!--                    <div class="tertOptions" id="top2">-->
+            <!--                        &lt;!&ndash;三级菜单&ndash;&gt;-->
+            <!--                        <div class="option" id="op14">白色日间</div>-->
+            <!--                        <div class="option" id="op15">深邃黑夜</div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+
+        </div>
+
+    </div>
+
+    <div id="topEditBar">
+        <div class="topEdit" id="topMoveUp">
+            <img class="topIcon" src="img/arrow_up.svg">
+            <span>
+                上移
+            </span>
+        </div>
+        <div class="topEdit" id="topMoveDown">
+            <img class="topIcon" src="img/arrow_down.svg">
+            <span>
+                下移
+            </span>
+        </div>
+        <div class="topEdit" id="topDelete">
+
+            <img class="topIcon" src="img/content_copy.svg">
+            <span>
+                复制
+            </span>
+        </div>
+        <div class="topEdit" id="topCopy">
+            <img class="topIcon" src="img/delete.svg">
+            <span>
+                删除
+            </span>
+        </div>
+        <div class="topEdit" id="topPlay">
+            <img class="topIcon" src="img/play_arrow.svg">
+            <span>
+                运行
+            </span>
+        </div>
+
+    </div>
+
+    <div id="profile">
+        <div id="icon">
+
+        </div>
+        <div id="username">
+
+        </div>
+    </div>
+</div>
+<div id="mainBanner">
+    <div id="leftSideBar">
+        <div id="titleinLSB">
+            <img id="titlePic" src="img/FileList.svg">
+            <div id="tTextLSB">
+                File Index
+            </div>
+        </div>
+        <!--        <div class="certainFile" data-file-index="0">-->
+        <!--            <div class="fileID">-->
+        <!--&lt;!&ndash;文件栏模板与文件操作（待做）&ndash;&gt;-->
+        <!--                0-->
+        <!--            </div>-->
+        <!--            <div class="fileName">-->
+        <!--                未命名-->
+        <!--            </div>-->
+        <!--        </div>-->
+    </div>
+
+    <div id="textArea">
+        <!--        <div class="splitArea" data-split-id="0">-->
+        <!--            <div class="splitLine"></div>-->
+        <!--            <div class="addCubeBtn">+ Markdown标记语言</div>-->
+        <!--        </div>-->
+        <!--        <div class="textCube" data-cube-id="0">-->
+        <!--            <div class="highLighted">-->
+
+        <!--            </div>-->
+        <!--            <div class="cubeid">-->
+        <!--                [0]:-->
+        <!--            </div>-->
+        <!--            <div class="typeCube" contenteditable="true">-->
+
+        <!--            </div>-->
+        <!--            <div class="inlineEditBar" contenteditable="false">-->
+        <!--                <img class="inlineIcon" src="img/arrow_up.svg">-->
+        <!--                <img class="inlineIcon" src="img/arrow_down.svg">-->
+        <!--                <img class="inlineIcon" src="img/content_copy.svg">-->
+        <!--                <img class="inlineIcon" src="img/delete.svg">-->
+        <!--                <img class="inlineIcon" src="img/play_arrow.svg">-->
+        <!--            </div>-->
+        <!--        </div>-->
+    </div>
+
+    <div id="rightSideBar">
+        <div id="upinRSB">
+            <div class="titleinRSB">
+                File Property
+            </div>
+        </div>
+        <div id="downinRSB">
+            <div class="titleinRSB">
+                Cell Property
+            </div>
+            <div id="cellID">
+                <span>Current Cell ID:</span>
+                <span id="realCellID">0</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

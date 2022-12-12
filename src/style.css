@@ -1,0 +1,532 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,html{
+  height: 100%;
+  width: 100%;
+}
+
+code{
+  font-family: "Cascadia Code";
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: "BungeeSpice";
+  src: url("font/BungeeSpice-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nabla";
+  src: url("font/Nabla-Regular-VariableFont_EDPT,EHLT.ttf");
+}
+
+#topBanner{
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid #dadada;
+  z-index: 9999;
+  background-color: white;
+}
+
+#logo{
+  margin-left: 10px;
+}
+
+.lText{
+  font-size: 40px;
+}
+
+#lText1{
+  font-family: "Nabla";
+}
+
+#lText2{
+  font-size: 30px;
+  font-family: "BungeeSpice";
+}
+
+#insideSynBox{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+#file-name{
+  margin-bottom: 2px;
+}
+
+#file-name #fileName{
+  margin-left: 14px;
+  border: 0px;
+  height: 24px;
+  width: 250px;
+  padding-left: 3px;
+  font-size: 16px;
+  font-family: 华文楷体;
+  font-weight: bold;
+}
+
+#file-name #fileName:hover{
+  border-radius: 4px;
+  border: 1px solid darkgray;
+}
+
+#profile{
+  width: 160px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 5px 8px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid darkgray;
+}
+
+#icon{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:  30px;
+  height: 30px;
+  border-radius: 15px;
+  background: linear-gradient(to top, #db36a4, #f7ff00);
+}
+
+#username{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  width: 100px;
+}
+
+#topEditBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  right: 200px;
+  /*width: 250px;*/
+  height: 30px;
+  border: 1px solid darkgray;
+  border-radius: 8px;
+}
+
+.topEdit{
+  padding: 0 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+  border-left: 1px solid darkgray;
+  cursor: pointer;
+}
+
+#topMoveUp{
+  border: 0px;
+}
+
+.topIcon{
+  width: 20px;
+  height: 20px;
+}
+
+#menu-bar{
+  position: relative;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+  height: 25px;
+  width: 200px;
+  /*background-color: aquamarine;*/
+
+}
+
+#menu-bar .options{
+  /*一级选项*/
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:60px;
+  height:25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#menu-bar .options:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.optionAll{
+  /*某个包含全部子选项的box*/
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  padding: 5px 0px;
+  z-index: 1;
+}
+
+#opa1{
+  display: none;/**/
+  top:25px;
+  left:4px;
+  box-shadow: 0px 5px 8px 2px rgba(0,0,0,0.2);
+}
+
+#opa2{
+  display: none;/**/
+  top: 25px;
+  left: 70px;
+  box-shadow: 0px 5px 8px 2px rgba(0,0,0,0.2);
+}
+
+#opa3{
+  display: none;/**/
+  top:25px;
+  left: 138px;
+  box-shadow: 0px 5px 8px 2px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.tertOptions{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  padding: 5px 0px;
+  z-index: 1;
+}
+
+#top1{
+  display: none;/**/
+  top: 0px;
+  left: 150px;
+  z-index: 20;
+  box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.2);
+}
+
+#op7:hover #top1{
+  display: flex;
+}
+
+#top2{
+  display: none;/**/
+  top: 29.5px;
+  left: 150px;
+  z-index: 20;
+  box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.2);
+}
+
+#op8:hover #top2{
+  display: flex;
+}
+
+.option{
+  /*单个选项*/
+  width: 150px;
+  height: 30px;
+  font-size: 13px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  user-select: none;
+}
+
+.option:hover{
+  background-color: rgba(169, 169, 169, 0.46);
+}
+
+#op1,#op2,#op4,#op5,#op6, #op7,#op9,#op11,#op12,#op14{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+#mainBanner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#leftSideBar{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 50px;
+  margin-top: 64px;
+  /*可以改成padding*/
+  border-right: 1px solid #dadada;
+  background-color: white;
+  z-index: 1000;
+  /*transition-duration: 0.2s;*/
+  /*transition-property: width;*/
+}
+
+#titleinLSB{
+  margin-top: 20px;
+  height: 30px;
+  width: 30px;
+  background-color: rgba(169, 169, 169, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.48);
+}
+
+#titlePic{
+  width: 24px;
+  height: 24px;
+}
+
+#tTextLSB{
+  display: none;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+}
+
+.certainFile{
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  /*201px*/
+  border-radius: 6px;
+  cursor: default;
+  /*box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.4)*/
+}
+
+.certainFile:hover{
+  background-color: rgba(169, 169, 169, 0.24);
+}
+
+.fileID{
+  font-family: "Cascadia Mono";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+
+}
+
+.fileName{
+  font-family: "微软雅黑 Light";
+  display: none;
+  padding-right: 6px;
+}
+
+#textArea{
+  position: relative;
+  z-index: 1;
+  margin-left: 50px;
+  margin-top: 100px;
+  margin-right: 250px;
+  flex: 1;
+  /*height: 2000px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.splitArea{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 14px;
+}
+
+.splitLine{
+  display: none;
+  width: 98%;
+  height: 1px;
+  background-color: rgba(128, 128, 128, 0.49);
+}
+
+.addCubeBtn{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  position: absolute;
+  width: 160px;
+  height: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  cursor: pointer;
+}
+
+.splitArea:hover .splitLine{
+  display: flex;
+}
+
+.splitArea:hover .addCubeBtn{
+  display: flex;
+}
+
+.textCube{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /*margin-top: 30px;*/
+  width: 100%;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.highLighted{
+  display: none;
+  /*flex*/
+  position: absolute;
+  top: 0px;
+  width: 5px;
+  height: 100%;
+  background-color: #ff9000;
+}
+
+.cubeid{
+  width: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.typeCube{
+  border: 1px solid lightslategray;
+  width: 100%;
+  min-height: 40px;
+  padding: 5px;
+  outline: none;
+  border-radius: 3px;
+}
+
+.inlineEditBar{
+  width: 130px;
+  height: 20px;
+  display: none;
+  /*flex*/
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  border-radius: 5px;
+  border: 1px solid lightslategray;
+  background-color: white;
+}
+
+.inlineIcon{
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inlineIcon:hover{
+  background-color: rgba(119, 136, 153, 0.18);
+}
+
+#rightSideBar{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  margin-top: 64px;
+  /*可以改成padding*/
+  border-left: 1px solid #dadada;
+}
+
+#upinRSB{
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  flex:1;
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+}
+
+#downinRSB{
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  flex:1;
+  width: 100%;
+}
+
+.titleinRSB{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  font-family: "Cascadia Code";
+  border-radius: 5px;
+  background-color: rgba(105, 105, 105, 0.23);
+}
+
+#cellID{
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  font-family: "Cascadia Code";
+  border-bottom: 1px solid #dadada;
+}
